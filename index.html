@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Survey on Feature Selection for Android Malware Detection</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="js/graph.js"></script>
+</head>
+<body>
+
+<div style="text-align: center; margin-top: 20px;">
+  <h1>A Survey on Feature Selection for Android Malware Detection</h1>
+  <p><strong>By Nattapong Neadtip</strong></p>
+  <p>This visualization summarizes research papers focusing on Android malware detection using feature selection techniques, classifiers, datasets, and highlighting the best-performing models.</p>
+</div>
+
+<div id="chart" style="width: 100%; height: 180vh; margin-top: 40px;"></div>
+
+<div id="legend">
+  <strong>Legend:</strong><br>
+  <span style="color: #1f77b4;">&#9679;</span> Paper ID<br>
+  <span style="color: gold;">&#9679;</span> Dataset<br>
+  <span style="color: lightgreen;">&#9679;</span> Feature Selection Method<br>
+  <span style="color: violet;">&#9679;</span> Classifier<br>
+  <span style="color: red;">&#8212;&#8212;</span> Best Result Connection
+</div>
+
+
+<footer style="margin-top: 40px; font-size: 0.9em; text-align: center;">
+  Created by Nattapong Neadtip | University of Nottingham Ningbo China
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch('survis.json')
+      .then(response => response.json())
+      .then(data => createGraph(data));
+  });
+</script>
+
+</body>
+</html>
